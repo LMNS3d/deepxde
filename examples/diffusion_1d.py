@@ -31,13 +31,12 @@ def main():
     ic = dde.IC(geomtime, func, lambda _, on_initial: on_initial)
     data = dde.data.TimePDE(
         geomtime,
-        1,
         pde,
         [bc, ic],
         num_domain=40,
         num_boundary=20,
         num_initial=10,
-        func=func,
+        solution=func,
         num_test=10000,
     )
 
